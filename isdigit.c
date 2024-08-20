@@ -1,11 +1,15 @@
-size_t	isalpha(char *str)
+#include <stddef.h>
+
+size_t	isdigit(const char *str)
 {
-	size_t i;
+	size_t	i;
 
 	i = 0;
-	while (str[i] != 0 && (str[i] >= '0' && str[i] <= '9'))
+	while (str[i] != 0)
+	{
+		if (!(str[i] >= '0' && str[i] <= '9'))
+			return (0);
 		i++;
-	if (str[i] == 0)
-		return (1);
-	return (0);
+	}
+	return (1);
 }
